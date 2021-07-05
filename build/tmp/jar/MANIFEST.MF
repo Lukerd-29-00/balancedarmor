@@ -1,9 +1,0 @@
-Manifest-Version: 1.0
-Specification-Title: examplemod
-Specification-Vendor: examplemodsareus
-Specification-Version: 1
-Implementation-Title: Balanced Armor 0.1
-Implementation-Version: 1.0
-Implementation-Vendor: examplemodsareus
-Implementation-Timestamp: 2021-07-05T11:14:10-0400
-

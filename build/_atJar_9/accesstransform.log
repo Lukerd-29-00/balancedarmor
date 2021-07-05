@@ -1,9 +1,0 @@
-[13:40:48] [main/INFO]: Writing debug log file accesstransform.log
-[13:40:48] [main/INFO]: Access Transformer processor running version 1.0.5+4+02b7b69
-[13:40:48] [main/INFO]: Command line arguments [--inJar, C:\Users\Lucas\IdeaProjects\Balanced Armor 0.1\build\fg_cache\net\minecraftforge\forge\1.16.5-36.1.32\forge-1.16.5-36.1.32-injected.jar, --outJar, C:\Users\Lucas\IdeaProjects\Balanced Armor 0.1\build\fg_cache\net\minecraftforge\forge\1.16.5-36.1.32_mapped_official_1.16.5\forge-1.16.5-36.1.32_mapped_official_1.16.5.jar, --logFile, accesstransform.log, --atFile, C:\Users\Lucas\IdeaProjects\Balanced Armor 0.1\src\main\resources\META-INF\accesstransformer.cfg, --atFile, C:\Users\Lucas\IdeaProjects\Balanced Armor 0.1\build\_atJar_9\parent_at.cfg]
-[13:40:48] [main/INFO]: Reading from C:\Users\Lucas\IdeaProjects\Balanced Armor 0.1\build\fg_cache\net\minecraftforge\forge\1.16.5-36.1.32\forge-1.16.5-36.1.32-injected.jar
-[13:40:48] [main/INFO]: Writing to C:\Users\Lucas\IdeaProjects\Balanced Armor 0.1\build\fg_cache\net\minecraftforge\forge\1.16.5-36.1.32_mapped_official_1.16.5\forge-1.16.5-36.1.32_mapped_official_1.16.5.jar
-[13:40:48] [main/INFO]: Transformer file C:\Users\Lucas\IdeaProjects\Balanced Armor 0.1\src\main\resources\META-INF\accesstransformer.cfg
-[13:40:48] [main/INFO]: Transformer file C:\Users\Lucas\IdeaProjects\Balanced Armor 0.1\build\_atJar_9\parent_at.cfg
-[13:40:48] [main/WARN]: Found existing output jar C:\Users\Lucas\IdeaProjects\Balanced Armor 0.1\build\fg_cache\net\minecraftforge\forge\1.16.5-36.1.32_mapped_official_1.16.5\forge-1.16.5-36.1.32_mapped_official_1.16.5.jar, overwriting
-[13:40:48] [main/DEBUG]: Loading access transformer accesstransformer.cfg from path C:\Users\Lucas\IdeaProjects\Balanced Armor 0.1\src\main\resources\META-INF\accesstransformer.cfg
