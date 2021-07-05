@@ -1,0 +1,37 @@
+com/lukerd/balancedarmor/armor/manager/NetheriteArmorManager.java
+ com.lukerd.balancedarmor.armor.manager.NetheriteArmorManager
+com/lukerd/balancedarmor/tab/BalancedTab.java
+ com.lukerd.balancedarmor.tab.BalancedTab
+com/lukerd/balancedarmor/damage/DamageManager.java
+ com.lukerd.balancedarmor.damage.DamageManager
+com/lukerd/balancedarmor/armor/manager/DiamondArmorManager.java
+ com.lukerd.balancedarmor.armor.manager.DiamondArmorManager
+com/lukerd/balancedarmor/armor/DyeableBalancedArmorItem.java
+ com.lukerd.balancedarmor.armor.DyeableBalancedArmorItem
+com/lukerd/balancedarmor/exceptions/InvalidArmorItemException.java
+ com.lukerd.balancedarmor.exceptions.InvalidArmorItemException
+com/lukerd/balancedarmor/damage/MeltingDamage.java
+ com.lukerd.balancedarmor.damage.MeltingDamage
+com/lukerd/balancedarmor/armor/manager/MeltedGoldHelmetManager.java
+ com.lukerd.balancedarmor.armor.manager.MeltedGoldHelmetManager
+com/lukerd/balancedarmor/armor/manager/AbstractArmorManager.java
+ com.lukerd.balancedarmor.armor.manager.AbstractArmorManager
+com/lukerd/balancedarmor/armor/material/IBalancedArmorMaterial.java
+ com.lukerd.balancedarmor.armor.material.IBalancedArmorMaterial
+com/lukerd/balancedarmor/armor/BalancedArmorItem.java
+ com.lukerd.balancedarmor.armor.BalancedArmorItem
+com/lukerd/balancedarmor/items/ItemList.java
+ com.lukerd.balancedarmor.items.ItemList
+com/lukerd/balancedarmor/slots/ArmorSlot.java
+ com.lukerd.balancedarmor.slots.ArmorSlot
+ com.lukerd.balancedarmor.slots.ArmorSlot$1
+com/lukerd/balancedarmor/BalancedArmor.java
+ com.lukerd.balancedarmor.BalancedArmor
+ com.lukerd.balancedarmor.BalancedArmor$RegistryEvents
+com/lukerd/balancedarmor/armor/manager/IronArmorManager.java
+ com.lukerd.balancedarmor.armor.manager.IronArmorManager
+ com.lukerd.balancedarmor.armor.manager.IronArmorManager$1
+com/lukerd/balancedarmor/armor/material/Materials.java
+ com.lukerd.balancedarmor.armor.material.Materials
+com/lukerd/balancedarmor/armor/manager/GoldenArmorManager.java
+ com.lukerd.balancedarmor.armor.manager.GoldenArmorManager

@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "balancedarmor:diamond_helmet"
+  },
+  "addition":
+  {
+    "tag": "forge:ingots/netherite"
+  },
+  "result":
+  {
+    "item": "balancedarmor:netherite_helmet"
+  }
+}

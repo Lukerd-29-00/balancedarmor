@@ -1,0 +1,67 @@
+---- Minecraft Crash Report ----
+// I let you down. Sorry :(
+
+Time: 7/3/21, 10:51 PM
+Description: Ticking memory connection
+
+java.lang.ClassCastException: class net.minecraft.item.AirItem cannot be cast to class net.minecraft.item.ArmorItem (net.minecraft.item.AirItem and net.minecraft.item.ArmorItem are in unnamed module of loader cpw.mods.modlauncher.TransformingClassLoader @4f8d86e4)
+	at com.lukerd.balancedarmor.capabilities.ArrowResist.ArrowResistManager.calcResistance(ArrowResistManager.java:31) ~[main/:?] {re:classloading}
+	at com.lukerd.balancedarmor.capabilities.ArrowResist.ArrowResistManager.onLogin(ArrowResistManager.java:36) ~[main/:?] {re:classloading}
+	at net.minecraftforge.eventbus.ASMEventHandler_15_ArrowResistManager_onLogin_PlayerLoggedInEvent.invoke(.dynamic) ~[?:?] {}
+	at net.minecraftforge.eventbus.ASMEventHandler.invoke(ASMEventHandler.java:85) ~[eventbus-4.0.0.jar:?] {}
+	at net.minecraftforge.eventbus.EventBus.post(EventBus.java:302) ~[eventbus-4.0.0.jar:?] {}
+	at net.minecraftforge.eventbus.EventBus.post(EventBus.java:283) ~[eventbus-4.0.0.jar:?] {}
+	at net.minecraftforge.fml.hooks.BasicEventHooks.firePlayerLoggedIn(BasicEventHooks.java:44) ~[forge:?] {re:classloading}
+	at net.minecraft.server.management.PlayerList.placeNewPlayer(PlayerList.java:231) ~[forge:?] {re:classloading}
+	at net.minecraft.network.login.ServerLoginNetHandler.handleAcceptedLogin(ServerLoginNetHandler.java:118) ~[forge:?] {re:classloading}
+	at net.minecraft.network.login.ServerLoginNetHandler.tick(ServerLoginNetHandler.java:65) ~[forge:?] {re:classloading}
+	at net.minecraft.network.NetworkManager.tick(NetworkManager.java:222) ~[forge:?] {re:classloading}
+	at net.minecraft.network.NetworkSystem.tick(NetworkSystem.java:134) ~[forge:?] {re:classloading}
+	at net.minecraft.server.MinecraftServer.tickChildren(MinecraftServer.java:865) ~[forge:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.MinecraftServer.tickServer(MinecraftServer.java:787) ~[forge:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.integrated.IntegratedServer.tickServer(IntegratedServer.java:78) ~[forge:?] {re:classloading,pl:runtimedistcleaner:A}
+	at net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:642) ~[forge:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:232) ~[forge:?] {re:classloading,pl:accesstransformer:B}
+	at java.lang.Thread.run(Thread.java:834) [?:?] {}
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- System Details --
+Details:
+	Minecraft Version: 1.16.5
+	Minecraft Version ID: 1.16.5
+	Operating System: Windows 10 (amd64) version 10.0
+	Java Version: 11.0.10, AdoptOpenJDK
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode), AdoptOpenJDK
+	Memory: 1127217152 bytes (1074 MB) / 1607467008 bytes (1533 MB) up to 4282384384 bytes (4084 MB)
+	CPUs: 12
+	JVM Flags: 1 total; -XX:HeapDumpPath=MojangTricksIntelDriversForPerformance_javaw.exe_minecraft.exe.heapdump
+	ModLauncher: 8.0.9+86+master.3cf110c
+	ModLauncher launch target: fmluserdevclient
+	ModLauncher naming: mcp
+	ModLauncher services: 
+		/mixin-0.8.2.jar mixin PLUGINSERVICE 
+		/eventbus-4.0.0.jar eventbus PLUGINSERVICE 
+		/forge-1.16.5-36.1.32_mapped_official_1.16.5-launcher.jar object_holder_definalize PLUGINSERVICE 
+		/forge-1.16.5-36.1.32_mapped_official_1.16.5-launcher.jar runtime_enum_extender PLUGINSERVICE 
+		/forge-1.16.5-36.1.32_mapped_official_1.16.5-launcher.jar capability_inject_definalize PLUGINSERVICE 
+		/accesstransformers-3.0.1.jar accesstransformer PLUGINSERVICE 
+		/forge-1.16.5-36.1.32_mapped_official_1.16.5-launcher.jar runtimedistcleaner PLUGINSERVICE 
+		/mixin-0.8.2.jar mixin TRANSFORMATIONSERVICE 
+		/forge-1.16.5-36.1.32_mapped_official_1.16.5-launcher.jar fml TRANSFORMATIONSERVICE 
+	FML: 36.1
+	Forge: net.minecraftforge:36.1.32
+	FML Language Providers: 
+		javafml@36.1
+		minecraft@1
+	Mod List: 
+		client-extra.jar                                  |Minecraft                     |minecraft                     |1.16.5              |DONE      |Manifest: a1:d4:5e:04:4f:d3:d6:e0:7b:37:97:cf:77:b0:de:ad:4a:47:ce:8c:96:49:5f:0a:cf:8c:ae:b2:6d:4b:8a:3f
+		forge-1.16.5-36.1.32_mapped_official_1.16.5.jar   |Forge                         |forge                         |36.1.32             |DONE      |Manifest: NOSIGNATURE
+		main                                              |Balanced Armor                |balancedarmor                 |NONE                |DONE      |Manifest: NOSIGNATURE
+	Crash Report UUID: 465505eb-fb49-4952-8bef-a9e7592ec5ce
+	Player Count: 1 / 8; [ServerPlayerEntity['Dev'/88, l='ServerLevel[New World]', x=190.92, y=70.00, z=-38.28]]
+	Data Packs: vanilla, mod:forge, mod:balancedarmor
+	Type: Integrated Server (map_client.txt)
+	Is Modded: Definitely; Client brand changed to 'forge'

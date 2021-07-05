@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "x x",
+    "xxx",
+    "xxx"
+  ],
+  "key":
+  {
+    "x":
+    {
+      "tag": "forge:gems/diamond"
+    }
+  },
+  "result":
+  {
+    "item": "balancedarmor:diamond_chestplate",
+    "count": 1
+  }
+}

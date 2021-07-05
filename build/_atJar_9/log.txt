@@ -1,0 +1,5 @@
+Args: "--inJar", "C:\Users\Lucas\IdeaProjects\Balanced Armor 0.1\build\fg_cache\net\minecraftforge\forge\1.16.5-36.1.32\forge-1.16.5-36.1.32-injected.jar", "--outJar", "C:\Users\Lucas\IdeaProjects\Balanced Armor 0.1\build\fg_cache\net\minecraftforge\forge\1.16.5-36.1.32_mapped_official_1.16.5\forge-1.16.5-36.1.32_mapped_official_1.16.5.jar", "--logFile", "accesstransform.log", "--atFile", "C:\Users\Lucas\IdeaProjects\Balanced Armor 0.1\src\main\resources\META-INF\accesstransformer.cfg", "--atFile", "C:\Users\Lucas\IdeaProjects\Balanced Armor 0.1\build\_atJar_9\parent_at.cfg"
+Classpath: C:\Users\Lucas\.gradle\caches\forge_gradle\maven_downloader\net\minecraftforge\accesstransformers\1.0.5\accesstransformers-1.0.5-fatjar.jar
+WorkDir: C:\Users\Lucas\IdeaProjects\Balanced Armor 0.1\build\_atJar_9
+Main: net.minecraftforge.accesstransformer.TransformerProcessor
+====================================
