@@ -24,7 +24,7 @@ public class DiamondArmorManager extends AbstractArmorManager{
         double dmg = (double)armor.getDamageValue();
         double maxdmg = (double)armor.getMaxDamage();
         int tmp = (int)Math.floor((1+((dmg*3)/maxdmg)));
-        armor.setDamageValue((int)dmg + tmp - 1);
+        AbstractArmorManager.damageItem(armor,tmp);
     }
 
     @SubscribeEvent

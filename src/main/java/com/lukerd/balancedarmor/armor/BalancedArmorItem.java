@@ -1,10 +1,8 @@
 package com.lukerd.balancedarmor.armor;
 
-import com.lukerd.balancedarmor.BalancedArmor;
 import com.lukerd.balancedarmor.armor.material.IBalancedArmorMaterial;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ArmorItem;
-import net.minecraft.item.IArmorMaterial;
 
 public class BalancedArmorItem extends ArmorItem {
     private final int arrowDefense;

@@ -9,6 +9,15 @@ import org.lwjgl.system.CallbackI;
 public class ItemList {
     //public static final Chainmail chain_helmet = new Chainmail(EquipmentSlotType.HEAD,new Item.Properties().tab(ItemGroup.TAB_COMBAT));
 
+    @ObjectHolder("balancedarmor:leather_helmet")
+    public static final BalancedArmorItem leather_helmet = null;
+    @ObjectHolder("balancedarmor:leather_chestplate")
+    public static final BalancedArmorItem leather_chestplate = null;
+    @ObjectHolder("balancedarmor:leather_leggings")
+    public static final BalancedArmorItem leather_leggings = null;
+    @ObjectHolder("balancedarmor:leather_boots")
+    public static final BalancedArmorItem leather_boots = null;
+
     @ObjectHolder("balancedarmor:chainmail_helmet")
     public static final BalancedArmorItem chain_helmet = null;
     @ObjectHolder("balancedarmor:chainmail_chestplate")

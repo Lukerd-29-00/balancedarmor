@@ -6,6 +6,8 @@ import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.ListNBT;
 
 public abstract class AbstractArmorManager {
 
@@ -27,7 +29,26 @@ public abstract class AbstractArmorManager {
         return stack.getItem().getRegistryName().equals(cmp.getRegistryName());
     }
 
-
+    protected static void damageItem(ItemStack target,int dmg){
+        ListNBT enchantments = target.getEnchantmentTags();
+        int j;
+        for(j = 0; j < enchantments.size() && !((CompoundNBT)enchantments.get(j)).getString("id").equals("minecraft:unbreaking"); j++);
+        double r = Math.random();
+        double denom = j < enchantments.size() ? (double)(((CompoundNBT)target.getEnchantmentTags().get(j)).getInt("lvl")) + 1.0: 1.0;
+        if(r <= 1.0/denom){
+            target.setDamageValue(target.getDamageValue() + dmg);
+        }
+        else{
+            try {
+                target.setDamageValue(target.getTag().getInt("prevdmg"));
+            } catch(NullPointerException e){
+                target.setDamageValue(target.getDamageValue());
+            }
+        }
+        CompoundNBT newtag = target.getTag();
+        newtag.putInt("prevdmg",target.getDamageValue());
+        target.setTag(newtag);
+    }
 
 
 }

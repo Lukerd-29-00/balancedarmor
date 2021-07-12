@@ -27,7 +27,7 @@ public class MeltedGoldHelmetManager extends AbstractArmorManager {
         while(slots.hasNext()){
             helmet = slots.next();
         }
-        if(helmet.getItem().getRegistryName().equals(ItemList.melted_golden_helmet.getRegistryName())){
+        if(helmet.getItem().equals(ItemList.melted_golden_helmet)){
             tick.player.hurt(DamageSource.CRAMMING,1.0F);
         }
     }

@@ -1,0 +1,6 @@
+Resistance effect: do research and implement in new damage system
+enchantments: override all armor enchantments or undo the change in damage, calc with armor, and then re-add the modifier
+piglins: get them to act the same with balanced armor gold as vanilla
+armor materials: add weight stat to all materials, calculate bonus fall damage and speed modifiers from it.
+Add new armor icons to toolbar? set the armor icons to the average of defenses? leave it alone?
+melted golden helmet: model & achievement

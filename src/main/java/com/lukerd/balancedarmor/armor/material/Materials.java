@@ -21,8 +21,11 @@ public enum Materials implements IBalancedArmorMaterial {
     LEATHER("leather", 5, new int[][]{{1, 2, 3, 1},{1,2,3,1},{1,2,3,1}}, 15, SoundEvents.ARMOR_EQUIP_LEATHER, 0.0F, 0.0F, () -> {
         return Ingredient.of(new IItemProvider[]{Items.LEATHER});
     }),
+    GOLD("gold", 5, new int[][]{{1, 2, 3, 1},{1,2,3,1},{0,0,0,0}}, 15, SoundEvents.ARMOR_EQUIP_GOLD, 0.0F, 0.0F, () -> {
+        return Ingredient.of(new IItemProvider[]{Items.GOLD_INGOT});
+    }),
     CHAIN("chainmail", 15, new int[][]{{1, 4, 5, 2},{0,1,1,0},{1,2,2,1}}, 12, SoundEvents.ARMOR_EQUIP_CHAIN, 0.0F, 0.0F, () -> {
-        return Ingredient.of(new IItemProvider[]{Items.IRON_INGOT});
+        return Ingredient.of(new IItemProvider[]{Items.IRON_NUGGET});
     }),
     IRON("iron", 15, new int[][]{{2, 5, 6, 2},{4,10,12,4},{1,2,3,1}}, 9, SoundEvents.ARMOR_EQUIP_IRON, 1.0F, 0.05F, () -> {
         return Ingredient.of(new IItemProvider[]{Items.IRON_INGOT});

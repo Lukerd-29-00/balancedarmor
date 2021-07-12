@@ -4,6 +4,7 @@ import com.lukerd.balancedarmor.BalancedArmor;
 import com.lukerd.balancedarmor.armor.BalancedArmorItem;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.inventory.EquipmentSlotType;
+import net.minecraft.item.AirItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
@@ -37,32 +38,28 @@ public class DamageManager {
         float toughness = 0;
         for(EquipmentSlotType slot: slots){
             tmp = entity.getItemBySlot(slot).getItem();
-            if(tmp == Items.AIR){
+            if(tmp instanceof AirItem){
                 defenses[slot.getIndex()] = 0;
             }
-            else if(damageSource.isProjectile()){
-                defenses[slot.getIndex()] = ((BalancedArmorItem)tmp).getArrowDefense();
-                toughness += ((BalancedArmorItem)tmp).getToughness();
-            }
-            else if(damageSource.isFire()){
-                defenses[slot.getIndex()] = ((BalancedArmorItem)tmp).getFireDefense();
-                toughness += ((BalancedArmorItem)tmp).getToughness();
-            }
-            else{
-                defenses[slot.getIndex()] = ((BalancedArmorItem)tmp).getMeleeDefense();
-                toughness += ((BalancedArmorItem)tmp).getToughness();
+            if(tmp instanceof BalancedArmorItem) {
+                if (damageSource.isProjectile()) {
+                    defenses[slot.getIndex()] = ((BalancedArmorItem) tmp).getArrowDefense();
+                    toughness += ((BalancedArmorItem) tmp).getToughness();
+                } else if (damageSource.isFire()) {
+                    defenses[slot.getIndex()] = ((BalancedArmorItem) tmp).getFireDefense();
+                    toughness += ((BalancedArmorItem) tmp).getToughness();
+                } else {
+                    defenses[slot.getIndex()] = ((BalancedArmorItem) tmp).getMeleeDefense();
+                    toughness += ((BalancedArmorItem) tmp).getToughness();
+                }
             }
         }
-
         int defensePoints = 0;
         for(int d : defenses){
             defensePoints += d;
         }
 
-
-
        return (float)(initialDamage * (1 - ((max(defensePoints/5,defensePoints - (initialDamage/(2 + (toughness/4)))))/25)));
-
     }
 
     @SubscribeEvent

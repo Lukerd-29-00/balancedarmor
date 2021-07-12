@@ -19,5 +19,12 @@
   "item.balancedarmor.netherite_helmet": "Netherite Helmet",
   "item.balancedarmor.netherite_chestplate": "Netherite Chestplate",
   "item.balancedarmor.netherite_leggings": "Netherite Leggings",
-  "item.balancedarmor.netherite_boots": "Netherite Boots"
+  "item.balancedarmor.netherite_boots": "Netherite Boots",
+  "item.balancedarmor.leather_helmet": "Leather Helmet",
+  "item.balancedarmor.leather_chestplate": "Leather Chestplate",
+  "item.balancedarmor.leather_leggings": "Leather Leggings",
+  "item.balancedarmor.leather_boots": "Leather Boots",
+  "attribute.name.projectile_resistance": "Projectile Resistance",
+  "attribute.name.fire_resistance": "Fire Resistance",
+  "attribute.name.melee_resistance": "Melee Resistance"
 }
