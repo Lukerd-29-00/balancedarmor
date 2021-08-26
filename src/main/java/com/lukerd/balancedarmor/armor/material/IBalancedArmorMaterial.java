@@ -9,4 +9,6 @@ public interface IBalancedArmorMaterial extends IArmorMaterial {
     public int getArrowDefenseForSlot(EquipmentSlotType slot);
 
     public int getFireDefenseForSlot(EquipmentSlotType slot);
+
+    public int getWeightForSlot(EquipmentSlotType slot);
 }

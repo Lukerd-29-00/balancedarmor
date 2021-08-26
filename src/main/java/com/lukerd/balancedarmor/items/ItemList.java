@@ -3,7 +3,6 @@ package com.lukerd.balancedarmor.items;
 import com.lukerd.balancedarmor.armor.BalancedArmorItem;
 import net.minecraft.item.ArmorItem;
 import net.minecraftforge.registries.ObjectHolder;
-import org.lwjgl.system.CallbackI;
 
 @ObjectHolder("balancedarmor")
 public class ItemList {

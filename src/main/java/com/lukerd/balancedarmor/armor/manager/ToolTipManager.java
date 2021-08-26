@@ -1,6 +1,5 @@
 package com.lukerd.balancedarmor.armor.manager;
 
-import com.google.common.collect.ImmutableMap;
 import com.lukerd.balancedarmor.BalancedArmor;
 import com.lukerd.balancedarmor.armor.BalancedArmorItem;
 import net.minecraft.util.text.Color;

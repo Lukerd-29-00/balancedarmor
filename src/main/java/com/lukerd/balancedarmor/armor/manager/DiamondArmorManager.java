@@ -1,19 +1,14 @@
 package com.lukerd.balancedarmor.armor.manager;
 
 import com.lukerd.balancedarmor.BalancedArmor;
-import com.lukerd.balancedarmor.armor.BalancedArmorItem;
 import com.lukerd.balancedarmor.items.ItemList;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.inventory.EquipmentSlotType;
-import net.minecraft.item.ArmorItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.event.entity.living.LivingDamageEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
-
-import java.util.UUID;
 
 @Mod.EventBusSubscriber(modid=BalancedArmor.MODID)
 public class DiamondArmorManager extends AbstractArmorManager{

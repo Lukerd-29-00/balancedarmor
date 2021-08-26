@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "balancedarmor:golden_helmet",
+    "balancedarmor:golden_chestplate",
+    "balancedarmor:golden_leggings",
+    "balancedarmor:golden_boots"
+  ]
+}

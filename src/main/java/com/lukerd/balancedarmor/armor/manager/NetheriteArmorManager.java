@@ -2,11 +2,9 @@ package com.lukerd.balancedarmor.armor.manager;
 
 import com.lukerd.balancedarmor.BalancedArmor;
 import com.lukerd.balancedarmor.items.ItemList;
-import net.minecraft.enchantment.Enchantments;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.ShortNBT;
 import net.minecraftforge.event.entity.living.LivingDamageEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;

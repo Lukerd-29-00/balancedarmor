@@ -2,11 +2,12 @@ package com.lukerd.balancedarmor.armor.manager;
 
 import com.lukerd.balancedarmor.BalancedArmor;
 import com.lukerd.balancedarmor.armor.ArmorLookup;
-import com.lukerd.balancedarmor.armor.material.Materials;
-import com.lukerd.balancedarmor.items.ItemList;
+import com.lukerd.balancedarmor.armor.material.Material;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.inventory.EquipmentSlotType;
-import net.minecraft.item.*;
+import net.minecraft.item.ArmorItem;
+import net.minecraft.item.ArmorMaterial;
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.event.entity.living.LivingSpawnEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -18,17 +19,17 @@ public class MobArmorManager {
         if(mob.getItemBySlot(EquipmentSlotType.HEAD).getItem() instanceof ArmorItem) {
             ArmorItem armor = (ArmorItem) mob.getItemBySlot(EquipmentSlotType.HEAD).getItem();
             if (armor.equals(ArmorLookup.getArmor(ArmorMaterial.LEATHER, slot))) {
-                mob.setItemSlot(slot, new ItemStack(ArmorLookup.getArmor(Materials.LEATHER, slot)));
+                mob.setItemSlot(slot, new ItemStack(ArmorLookup.getArmor(Material.LEATHER, slot)));
             } else if (armor.equals(ArmorLookup.getArmor(ArmorMaterial.GOLD, slot))) {
-                mob.setItemSlot(slot, new ItemStack(ArmorLookup.getArmor(Materials.GOLD, slot)));
+                mob.setItemSlot(slot, new ItemStack(ArmorLookup.getArmor(Material.GOLD, slot)));
             } else if (armor.equals(ArmorLookup.getArmor(ArmorMaterial.CHAIN, slot))) {
-                mob.setItemSlot(slot, new ItemStack(ArmorLookup.getArmor(Materials.CHAIN, slot)));
+                mob.setItemSlot(slot, new ItemStack(ArmorLookup.getArmor(Material.CHAIN, slot)));
             } else if (armor.equals(ArmorLookup.getArmor(ArmorMaterial.IRON, slot))) {
-                mob.setItemSlot(slot, new ItemStack(ArmorLookup.getArmor(Materials.IRON, slot)));
+                mob.setItemSlot(slot, new ItemStack(ArmorLookup.getArmor(Material.IRON, slot)));
             } else if (armor.equals(ArmorLookup.getArmor(ArmorMaterial.DIAMOND, slot))) {
-                mob.setItemSlot(slot, new ItemStack(ArmorLookup.getArmor(Materials.DIAMOND, slot)));
+                mob.setItemSlot(slot, new ItemStack(ArmorLookup.getArmor(Material.DIAMOND, slot)));
             } else if (armor.equals(ArmorLookup.getArmor(ArmorMaterial.NETHERITE, slot))) {
-                mob.setItemSlot(slot, new ItemStack(ArmorLookup.getArmor(Materials.NETHERITE, slot)));
+                mob.setItemSlot(slot, new ItemStack(ArmorLookup.getArmor(Material.NETHERITE, slot)));
             }
         }
     }

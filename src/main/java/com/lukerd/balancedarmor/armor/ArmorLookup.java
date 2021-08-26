@@ -1,9 +1,9 @@
 package com.lukerd.balancedarmor.armor;
 
-import com.lukerd.balancedarmor.armor.material.Materials;
+import com.lukerd.balancedarmor.armor.material.Material;
+import com.lukerd.balancedarmor.items.ItemList;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.*;
-import com.lukerd.balancedarmor.items.ItemList;
 
 public class ArmorLookup {
     private static final Item[][] vanillasets = {
@@ -45,7 +45,7 @@ public class ArmorLookup {
         throw new IllegalArgumentException("ERROR: Invalid material detected!");
     }
 
-    private static Item[] getBalancedSetByMaterial(Materials material) throws IllegalArgumentException{
+    private static Item[] getBalancedSetByMaterial(Material material) throws IllegalArgumentException{
         switch(material){
             case MELTED_GOLD:
                 return balancedsets[0];
@@ -66,6 +66,6 @@ public class ArmorLookup {
     }
 
     public static ArmorItem getArmor(IArmorMaterial material, EquipmentSlotType slot){
-        return material instanceof ArmorMaterial ? (ArmorItem)getVanillaSetByMaterial((ArmorMaterial)material)[slot.getIndex()] : (ArmorItem)getBalancedSetByMaterial((Materials)material)[slot.getIndex()];
+        return material instanceof ArmorMaterial ? (ArmorItem)getVanillaSetByMaterial((ArmorMaterial)material)[slot.getIndex()] : (ArmorItem)getBalancedSetByMaterial((Material)material)[slot.getIndex()];
     }
 }

@@ -1,7 +1,6 @@
 package com.lukerd.balancedarmor.armor.manager;
 
 import com.lukerd.balancedarmor.BalancedArmor;
-import com.lukerd.balancedarmor.armor.manager.AbstractArmorManager;
 import com.lukerd.balancedarmor.items.ItemList;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.inventory.EquipmentSlotType;

@@ -1,4 +1,4 @@
 package com.lukerd.balancedarmor.tab;
 
-public class BalancedTab {
+public class BalancedTab{
 }

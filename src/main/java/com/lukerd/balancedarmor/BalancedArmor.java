@@ -2,14 +2,15 @@ package com.lukerd.balancedarmor;
 
 import com.lukerd.balancedarmor.armor.BalancedArmorItem;
 import com.lukerd.balancedarmor.armor.DyeableBalancedArmorItem;
-import com.lukerd.balancedarmor.armor.material.Materials;
-import com.lukerd.balancedarmor.capability.weight.Factory;
-import com.lukerd.balancedarmor.capability.weight.IWeight;
-import com.lukerd.balancedarmor.capability.weight.Storage;
+import com.lukerd.balancedarmor.armor.material.Material;
+import com.lukerd.balancedarmor.capability.Factory;
+import com.lukerd.balancedarmor.capability.IArmorCapability;
+import com.lukerd.balancedarmor.capability.Storage;
 import com.lukerd.balancedarmor.slots.ArmorSlot;
 import net.minecraft.inventory.EquipmentSlotType;
-import net.minecraft.item.*;
-import net.minecraft.item.crafting.IRecipe;
+import net.minecraft.item.ArmorItem;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemGroup;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.capabilities.CapabilityManager;
 import net.minecraftforge.event.RegistryEvent;
@@ -24,7 +25,6 @@ import net.minecraftforge.fml.event.server.FMLServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.lwjgl.system.CallbackI;
 
 import java.util.stream.Collectors;
 
@@ -87,42 +87,42 @@ public class BalancedArmor
         @SubscribeEvent
         public static void onItemsRegistry(final RegistryEvent.Register<Item> itemRegistryEvent) {
 
-            final BalancedArmorItem leather_helmet = new DyeableBalancedArmorItem(Materials.LEATHER,ArmorSlot.HEAD.getValue(),new Item.Properties().tab(ItemGroup.TAB_COMBAT));
-            final BalancedArmorItem leather_chestplate = new DyeableBalancedArmorItem(Materials.LEATHER,ArmorSlot.CHEST.getValue(),new Item.Properties().tab(ItemGroup.TAB_COMBAT));
-            final BalancedArmorItem leather_leggings = new DyeableBalancedArmorItem(Materials.LEATHER,ArmorSlot.LEGS.getValue(),new Item.Properties().tab(ItemGroup.TAB_COMBAT));
-            final BalancedArmorItem leather_boots = new DyeableBalancedArmorItem(Materials.LEATHER,ArmorSlot.FEET.getValue(),new Item.Properties().tab(ItemGroup.TAB_COMBAT));
+            final BalancedArmorItem leather_helmet = new DyeableBalancedArmorItem(Material.LEATHER,ArmorSlot.HEAD.getValue(),new Item.Properties().tab(ItemGroup.TAB_COMBAT));
+            final BalancedArmorItem leather_chestplate = new DyeableBalancedArmorItem(Material.LEATHER,ArmorSlot.CHEST.getValue(),new Item.Properties().tab(ItemGroup.TAB_COMBAT));
+            final BalancedArmorItem leather_leggings = new DyeableBalancedArmorItem(Material.LEATHER,ArmorSlot.LEGS.getValue(),new Item.Properties().tab(ItemGroup.TAB_COMBAT));
+            final BalancedArmorItem leather_boots = new DyeableBalancedArmorItem(Material.LEATHER,ArmorSlot.FEET.getValue(),new Item.Properties().tab(ItemGroup.TAB_COMBAT));
 
-            final BalancedArmorItem chain_helmet = new BalancedArmorItem(Materials.CHAIN,ArmorSlot.HEAD.getValue(),new Item.Properties().tab(ItemGroup.TAB_COMBAT));
-            final BalancedArmorItem chain_chestplate = new BalancedArmorItem(Materials.CHAIN,ArmorSlot.CHEST.getValue(),new Item.Properties().tab(ItemGroup.TAB_COMBAT));
-            final BalancedArmorItem chain_leggings = new BalancedArmorItem(Materials.CHAIN,ArmorSlot.LEGS.getValue(),new Item.Properties().tab(ItemGroup.TAB_COMBAT));
-            final BalancedArmorItem chain_boots = new BalancedArmorItem(Materials.CHAIN,ArmorSlot.FEET.getValue(),new Item.Properties().tab(ItemGroup.TAB_COMBAT));
+            final BalancedArmorItem chain_helmet = new BalancedArmorItem(Material.CHAIN,ArmorSlot.HEAD.getValue(),new Item.Properties().tab(ItemGroup.TAB_COMBAT));
+            final BalancedArmorItem chain_chestplate = new BalancedArmorItem(Material.CHAIN,ArmorSlot.CHEST.getValue(),new Item.Properties().tab(ItemGroup.TAB_COMBAT));
+            final BalancedArmorItem chain_leggings = new BalancedArmorItem(Material.CHAIN,ArmorSlot.LEGS.getValue(),new Item.Properties().tab(ItemGroup.TAB_COMBAT));
+            final BalancedArmorItem chain_boots = new BalancedArmorItem(Material.CHAIN,ArmorSlot.FEET.getValue(),new Item.Properties().tab(ItemGroup.TAB_COMBAT));
 
-            final BalancedArmorItem iron_helmet = new BalancedArmorItem(Materials.IRON, ArmorSlot.HEAD.getValue(),new Item.Properties().tab(ItemGroup.TAB_COMBAT));
-            final BalancedArmorItem iron_chestplate = new BalancedArmorItem(Materials.IRON,ArmorSlot.CHEST.getValue(),new Item.Properties().tab(ItemGroup.TAB_COMBAT));
-            final BalancedArmorItem iron_leggings = new BalancedArmorItem(Materials.IRON,ArmorSlot.LEGS.getValue(), new Item.Properties().tab(ItemGroup.TAB_COMBAT));
-            final BalancedArmorItem iron_boots = new BalancedArmorItem(Materials.IRON,ArmorSlot.FEET.getValue(),new Item.Properties().tab(ItemGroup.TAB_COMBAT));
+            final BalancedArmorItem iron_helmet = new BalancedArmorItem(Material.IRON, ArmorSlot.HEAD.getValue(),new Item.Properties().tab(ItemGroup.TAB_COMBAT));
+            final BalancedArmorItem iron_chestplate = new BalancedArmorItem(Material.IRON,ArmorSlot.CHEST.getValue(),new Item.Properties().tab(ItemGroup.TAB_COMBAT));
+            final BalancedArmorItem iron_leggings = new BalancedArmorItem(Material.IRON,ArmorSlot.LEGS.getValue(), new Item.Properties().tab(ItemGroup.TAB_COMBAT));
+            final BalancedArmorItem iron_boots = new BalancedArmorItem(Material.IRON,ArmorSlot.FEET.getValue(),new Item.Properties().tab(ItemGroup.TAB_COMBAT));
 
-            final ArmorItem gold_helmet = new BalancedArmorItem(Materials.GOLD,ArmorSlot.HEAD.getValue(),new Item.Properties().tab(ItemGroup.TAB_COMBAT));
-            final ArmorItem gold_chestplate = new BalancedArmorItem(Materials.GOLD,ArmorSlot.CHEST.getValue(),new Item.Properties().tab(ItemGroup.TAB_COMBAT));
-            final ArmorItem gold_leggings = new BalancedArmorItem(Materials.GOLD,ArmorSlot.LEGS.getValue(),new Item.Properties().tab(ItemGroup.TAB_COMBAT));
-            final ArmorItem gold_boots = new BalancedArmorItem(Materials.GOLD,ArmorSlot.FEET.getValue(),new Item.Properties().tab(ItemGroup.TAB_COMBAT));
+            final ArmorItem gold_helmet = new BalancedArmorItem(Material.GOLD,ArmorSlot.HEAD.getValue(),new Item.Properties().tab(ItemGroup.TAB_COMBAT));
+            final ArmorItem gold_chestplate = new BalancedArmorItem(Material.GOLD,ArmorSlot.CHEST.getValue(),new Item.Properties().tab(ItemGroup.TAB_COMBAT));
+            final ArmorItem gold_leggings = new BalancedArmorItem(Material.GOLD,ArmorSlot.LEGS.getValue(),new Item.Properties().tab(ItemGroup.TAB_COMBAT));
+            final ArmorItem gold_boots = new BalancedArmorItem(Material.GOLD,ArmorSlot.FEET.getValue(),new Item.Properties().tab(ItemGroup.TAB_COMBAT));
 
-            final BalancedArmorItem diamond_helmet = new BalancedArmorItem(Materials.DIAMOND,ArmorSlot.HEAD.getValue(),new Item.Properties().tab(ItemGroup.TAB_COMBAT));
-            final BalancedArmorItem diamond_chestplate = new BalancedArmorItem(Materials.DIAMOND,ArmorSlot.CHEST.getValue(),new Item.Properties().tab(ItemGroup.TAB_COMBAT));
-            final BalancedArmorItem diamond_leggings = new BalancedArmorItem(Materials.DIAMOND,ArmorSlot.LEGS.getValue(),new Item.Properties().tab(ItemGroup.TAB_COMBAT));
-            final BalancedArmorItem diamond_boots = new BalancedArmorItem(Materials.DIAMOND,ArmorSlot.FEET.getValue(),new Item.Properties().tab(ItemGroup.TAB_COMBAT));
+            final BalancedArmorItem diamond_helmet = new BalancedArmorItem(Material.DIAMOND,ArmorSlot.HEAD.getValue(),new Item.Properties().tab(ItemGroup.TAB_COMBAT));
+            final BalancedArmorItem diamond_chestplate = new BalancedArmorItem(Material.DIAMOND,ArmorSlot.CHEST.getValue(),new Item.Properties().tab(ItemGroup.TAB_COMBAT));
+            final BalancedArmorItem diamond_leggings = new BalancedArmorItem(Material.DIAMOND,ArmorSlot.LEGS.getValue(),new Item.Properties().tab(ItemGroup.TAB_COMBAT));
+            final BalancedArmorItem diamond_boots = new BalancedArmorItem(Material.DIAMOND,ArmorSlot.FEET.getValue(),new Item.Properties().tab(ItemGroup.TAB_COMBAT));
 
-            final BalancedArmorItem netherite_helmet = new BalancedArmorItem(Materials.NETHERITE,ArmorSlot.HEAD.getValue(),new Item.Properties().tab(ItemGroup.TAB_COMBAT).fireResistant());
-            final BalancedArmorItem netherite_chestplate = new BalancedArmorItem(Materials.NETHERITE,ArmorSlot.CHEST.getValue(),new Item.Properties().tab(ItemGroup.TAB_COMBAT).fireResistant());
-            final BalancedArmorItem netherite_leggings = new BalancedArmorItem(Materials.NETHERITE,ArmorSlot.LEGS.getValue(),new Item.Properties().tab(ItemGroup.TAB_COMBAT).fireResistant());
-            final BalancedArmorItem netherite_boots = new BalancedArmorItem(Materials.NETHERITE,ArmorSlot.FEET.getValue(),new Item.Properties().tab(ItemGroup.TAB_COMBAT).fireResistant());
+            final BalancedArmorItem netherite_helmet = new BalancedArmorItem(Material.NETHERITE,ArmorSlot.HEAD.getValue(),new Item.Properties().tab(ItemGroup.TAB_COMBAT).fireResistant());
+            final BalancedArmorItem netherite_chestplate = new BalancedArmorItem(Material.NETHERITE,ArmorSlot.CHEST.getValue(),new Item.Properties().tab(ItemGroup.TAB_COMBAT).fireResistant());
+            final BalancedArmorItem netherite_leggings = new BalancedArmorItem(Material.NETHERITE,ArmorSlot.LEGS.getValue(),new Item.Properties().tab(ItemGroup.TAB_COMBAT).fireResistant());
+            final BalancedArmorItem netherite_boots = new BalancedArmorItem(Material.NETHERITE,ArmorSlot.FEET.getValue(),new Item.Properties().tab(ItemGroup.TAB_COMBAT).fireResistant());
 
             final Item myIron = new Item(new Item.Properties().tab(ItemGroup.TAB_MATERIALS));
             final Item myGold = new Item(new Item.Properties().tab(ItemGroup.TAB_MATERIALS));
             final Item myLeather = new Item(new Item.Properties().tab(ItemGroup.TAB_MATERIALS));
             final Item mydiamond = new Item(new Item.Properties().tab(ItemGroup.TAB_MATERIALS));
 
-            final ArmorItem melted_gold_helmet = new ArmorItem(Materials.MELTED_GOLD, EquipmentSlotType.HEAD,new Item.Properties().setNoRepair());
+            final ArmorItem melted_gold_helmet = new ArmorItem(Material.MELTED_GOLD, EquipmentSlotType.HEAD,new Item.Properties().setNoRepair());
 
             leather_helmet.setRegistryName("leather_helmet");
             leather_chestplate.setRegistryName("leather_chestplate");
@@ -192,8 +192,6 @@ public class BalancedArmor
                     netherite_leggings,
                     netherite_boots,
 
-                    melted_gold_helmet,
-
                     myIron,
                     myGold,
                     myLeather,
@@ -201,9 +199,8 @@ public class BalancedArmor
             };
             itemRegistryEvent.getRegistry().registerAll(items);
 
-            CapabilityManager.INSTANCE.register(IWeight.class,new Storage(),new Factory());
+            CapabilityManager.INSTANCE.register(IArmorCapability.class, new Storage(),new Factory());
 
-            //CapabilityManager.INSTANCE.register(IArrowResist.class, new Storage(),new Factory());
         }
 
 
