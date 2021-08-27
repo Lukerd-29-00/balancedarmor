@@ -1,4 +1,4 @@
-package com.lukerd.balancedarmor.capability;
+package com.lukerd.balancedarmor.capability.ArmorCapability;
 
 import net.minecraft.util.Direction;
 import net.minecraftforge.common.capabilities.Capability;
@@ -15,7 +15,7 @@ public class Provider implements ICapabilityProvider {
     private IArmorCapability instance = ARMOR_CAPABILITY.getDefaultInstance();
 
 
-    private NonNullSupplier<IArmorCapability> supplier = new com.lukerd.balancedarmor.capability.Supplier();
+    private NonNullSupplier<IArmorCapability> supplier = new Supplier();
 
     private LazyOptional<IArmorCapability> lazy = LazyOptional.of(supplier);
 

@@ -1,5 +1,8 @@
 package com.lukerd.balancedarmor.armor.manager;
 
+import com.lukerd.balancedarmor.capability.PreviousDamageCapability.IPreviousDamageCapability;
+import com.lukerd.balancedarmor.capability.PreviousDamageCapability.Provider;
+import com.lukerd.balancedarmor.capability.PreviousDamageCapability.Supplier;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.Item;
@@ -29,12 +32,10 @@ public abstract class AbstractArmorManager {
 
     protected static void damageItem(ItemStack target,int dmg){
 
-        CompoundNBT newtag = target.getTag();
-        int previousDamage = newtag.getInt("prevdmg");
-        if(previousDamage != target.getDamageValue()){
+        IPreviousDamageCapability damage = target.getCapability(Provider.PREVIOUS_DAMAGE_CAPABILITY).orElseGet(new Supplier());
+        if(damage.getDamage() != target.getDamageValue()){
             target.setDamageValue(target.getDamageValue() + dmg);
-            newtag.putInt("prevdmg",target.getDamageValue());
-            target.setTag(newtag);
+            damage.setDamage((short)target.getDamageValue());
         }
 
     }

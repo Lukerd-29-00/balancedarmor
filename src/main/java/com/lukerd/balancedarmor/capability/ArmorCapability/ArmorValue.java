@@ -1,4 +1,4 @@
-package com.lukerd.balancedarmor.capability;
+package com.lukerd.balancedarmor.capability.ArmorCapability;
 
 public enum ArmorValue {
     WEIGHT,

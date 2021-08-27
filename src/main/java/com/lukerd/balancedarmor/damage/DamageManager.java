@@ -1,7 +1,10 @@
 package com.lukerd.balancedarmor.damage;
 
 import com.lukerd.balancedarmor.BalancedArmor;
-import com.lukerd.balancedarmor.capability.*;
+import com.lukerd.balancedarmor.capability.ArmorCapability.ArmorValue;
+import com.lukerd.balancedarmor.capability.ArmorCapability.IArmorCapability;
+import com.lukerd.balancedarmor.capability.ArmorCapability.Provider;
+import com.lukerd.balancedarmor.capability.ArmorCapability.Supplier;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.ai.attributes.Attributes;
 import net.minecraft.util.DamageSource;

@@ -1,5 +1,7 @@
-package com.lukerd.balancedarmor.capability;
+package com.lukerd.balancedarmor.capability.ArmorCapability;
 
+import com.lukerd.balancedarmor.capability.ArmorCapability.ArmorValue;
+import com.lukerd.balancedarmor.capability.ArmorCapability.IArmorCapability;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.nbt.INBT;
 import net.minecraft.util.Direction;

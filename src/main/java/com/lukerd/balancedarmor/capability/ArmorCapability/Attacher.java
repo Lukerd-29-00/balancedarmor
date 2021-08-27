@@ -1,4 +1,4 @@
-package com.lukerd.balancedarmor.capability;
+package com.lukerd.balancedarmor.capability.ArmorCapability;
 
 import com.lukerd.balancedarmor.BalancedArmor;
 import net.minecraft.entity.Entity;

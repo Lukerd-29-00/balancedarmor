@@ -1,4 +1,4 @@
-package com.lukerd.balancedarmor.capability;
+package com.lukerd.balancedarmor.capability.ArmorCapability;
 
 public class ArmorCapability implements IArmorCapability {
     private short weight;

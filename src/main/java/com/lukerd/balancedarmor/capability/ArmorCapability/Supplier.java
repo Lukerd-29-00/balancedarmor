@@ -1,5 +1,6 @@
-package com.lukerd.balancedarmor.capability;
+package com.lukerd.balancedarmor.capability.ArmorCapability;
 
+import com.lukerd.balancedarmor.capability.ArmorCapability.IArmorCapability;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.capabilities.CapabilityInject;
 import net.minecraftforge.common.util.NonNullSupplier;

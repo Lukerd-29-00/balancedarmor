@@ -3,9 +3,10 @@ package com.lukerd.balancedarmor;
 import com.lukerd.balancedarmor.armor.BalancedArmorItem;
 import com.lukerd.balancedarmor.armor.DyeableBalancedArmorItem;
 import com.lukerd.balancedarmor.armor.material.Material;
-import com.lukerd.balancedarmor.capability.Factory;
-import com.lukerd.balancedarmor.capability.IArmorCapability;
-import com.lukerd.balancedarmor.capability.Storage;
+import com.lukerd.balancedarmor.capability.ArmorCapability.Factory;
+import com.lukerd.balancedarmor.capability.ArmorCapability.IArmorCapability;
+import com.lukerd.balancedarmor.capability.ArmorCapability.Storage;
+import com.lukerd.balancedarmor.capability.PreviousDamageCapability.IPreviousDamageCapability;
 import com.lukerd.balancedarmor.slots.ArmorSlot;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ArmorItem;
@@ -200,11 +201,7 @@ public class BalancedArmor
             itemRegistryEvent.getRegistry().registerAll(items);
 
             CapabilityManager.INSTANCE.register(IArmorCapability.class, new Storage(),new Factory());
-
+            CapabilityManager.INSTANCE.register(IPreviousDamageCapability.class,new com.lukerd.balancedarmor.capability.PreviousDamageCapability.Storage(),new com.lukerd.balancedarmor.capability.PreviousDamageCapability.Factory());
         }
-
-
-
-
     }
 }

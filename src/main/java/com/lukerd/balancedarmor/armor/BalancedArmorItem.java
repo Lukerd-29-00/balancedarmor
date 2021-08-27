@@ -2,7 +2,7 @@ package com.lukerd.balancedarmor.armor;
 
 import com.lukerd.balancedarmor.armor.material.IBalancedArmorMaterial;
 import com.lukerd.balancedarmor.armor.material.Material;
-import com.lukerd.balancedarmor.capability.ArmorValue;
+import com.lukerd.balancedarmor.capability.ArmorCapability.ArmorValue;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ArmorItem;
