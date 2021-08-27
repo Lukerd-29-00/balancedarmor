@@ -26,5 +26,6 @@
   "item.balancedarmor.leather_boots": "Leather Boots",
   "attribute.name.projectile_resistance": "Projectile Resistance",
   "attribute.name.fire_resistance": "Fire Resistance",
-  "attribute.name.melee_resistance": "Melee Resistance"
+  "attribute.name.melee_resistance": "Melee Resistance",
+  "attribute.name.weight": "Weight"
 }

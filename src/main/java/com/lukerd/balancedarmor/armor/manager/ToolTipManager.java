@@ -11,12 +11,13 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.event.entity.player.ItemTooltipEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
-
+import net.minecraft.util.text.TextFormatting;
 import java.util.List;
 
 @Mod.EventBusSubscriber(modid= BalancedArmor.MODID,bus=Mod.EventBusSubscriber.Bus.FORGE)
 public class ToolTipManager {
-    private static Style blueText = Style.EMPTY.withColor(Color.fromRgb(5592575));
+    private static Style blueText = Style.EMPTY.withColor(TextFormatting.BLUE);
+    private static Style redText = Style.EMPTY.withColor(TextFormatting.RED);
 
     @SubscribeEvent
     @OnlyIn(Dist.CLIENT)
@@ -28,19 +29,29 @@ public class ToolTipManager {
             String teststr = "itemmodifiers";
             int i = 0;
             for (; i < tip.size(); i++) {
-                try {
+                if (tip.get(i) instanceof TranslationTextComponent) {
+
                     tmp = ((TranslationTextComponent) tip.get(i)).getKey().split("\\.");
-                    if ((tmp[0] + tmp[1]).equals(teststr)) {
+                    if (tmp.length >= 2 && (tmp[0] + tmp[1]).equals(teststr)) {
                         i++;
                         break;
                     }
-                } catch (ClassCastException e) {
-                    continue;
                 }
             }
-            tip.add(i,new TranslationTextComponent("attribute.modifier.plus.0",String.valueOf(armorPiece.getDefense() + armorPiece.getArrowDefense()),new TranslationTextComponent("attribute.name.projectile_resistance")).setStyle(blueText));
-            tip.add(i,new TranslationTextComponent("attribute.modifier.plus.0",String.valueOf(armorPiece.getDefense() + armorPiece.getFireDefense()),new TranslationTextComponent("attribute.name.fire_resistance")).setStyle(blueText));
-            tip.add(i,new TranslationTextComponent("attribute.modifier.plus.0",String.valueOf(armorPiece.getDefense() + armorPiece.getMeleeDefense()),new TranslationTextComponent("attribute.name.melee_resistance")).setStyle(blueText));
+            tip.add(i++,new TranslationTextComponent("attribute.modifier.plus.0",String.valueOf(armorPiece.getDefense() + armorPiece.getArrowDefense()),new TranslationTextComponent("attribute.name.projectile_resistance")).setStyle(blueText));
+            tip.add(i++,new TranslationTextComponent("attribute.modifier.plus.0",String.valueOf(armorPiece.getDefense() + armorPiece.getFireDefense()),new TranslationTextComponent("attribute.name.fire_resistance")).setStyle(blueText));
+            tip.add(i++,new TranslationTextComponent("attribute.modifier.plus.0",String.valueOf(armorPiece.getDefense() + armorPiece.getMeleeDefense()),new TranslationTextComponent("attribute.name.melee_resistance")).setStyle(blueText));
+            for(; i < tip.size(); i++){
+                try{
+                    tmp = ((TranslationTextComponent)tip.get(i)).getKey().split("\\.");
+                    if(tmp.length >= 2 && !((tmp[0] + tmp[1]).equals("attributemodifier"))){
+                        break;
+                    }
+                } catch(ClassCastException e){
+                    break;
+                }
+            }
+            tip.add(i,new TranslationTextComponent("attribute.modifier.plus.0",String.valueOf(armorPiece.getWeight()),new TranslationTextComponent("attribute.name.weight")).setStyle(redText));
         }
     }
 }
